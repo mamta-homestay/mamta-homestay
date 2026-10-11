@@ -1,0 +1,276 @@
+/* ========================================
+   AMENITIES SECTION
+======================================== */
+
+.amenities-section {
+  padding: 110px 24px 100px;
+  background: #f8f6f0;
+  color: #24352b;
+}
+
+.amenities-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.amenities-heading {
+  max-width: 680px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.amenities-heading .section-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #55745d;
+}
+
+.amenities-heading .section-title {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 62px);
+  line-height: 1.16;
+}
+
+.amenities-title-accent {
+  color: #71836d;
+  font-style: italic;
+}
+
+.amenities-intro {
+  max-width: 540px;
+  margin: 24px auto 0;
+  color: #68736a;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   AMENITIES GRID
+======================================== */
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #dedfd5;
+  border-left: 1px solid #dedfd5;
+}
+
+.amenity-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+
+  min-width: 0;
+  min-height: 150px;
+  padding: 28px 24px;
+
+  border-right: 1px solid #dedfd5;
+  border-bottom: 1px solid #dedfd5;
+
+  transition: background 0.25s ease;
+}
+
+.amenity-card:hover {
+  background: #eeece4;
+}
+
+/* ========================================
+   ICON
+======================================== */
+
+.amenity-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-items: center;
+
+  border: 1px solid #d6ddd2;
+  border-radius: 50%;
+  background: #f1f2e9;
+  color: #41664d;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.amenity-card:hover .amenity-icon {
+  background: #294b3b;
+  border-color: #294b3b;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   TEXT
+======================================== */
+
+.amenity-copy {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.amenity-copy h3 {
+  margin: 0 0 9px;
+  color: #294b3b;
+
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.amenity-copy p {
+  margin: 0;
+  color: #758076;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.amenity-number {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+
+  color: #a0a79b;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+/* ========================================
+   FOOTER NOTE
+======================================== */
+
+.amenities-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  margin-top: 45px;
+  text-align: center;
+}
+
+.amenities-footer-line {
+  width: 28px;
+  height: 1px;
+  background: #b6a77e;
+}
+
+.amenities-footer p {
+  margin: 0;
+  color: #68736a;
+  font-size: 12px;
+}
+
+.amenities-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #294b3b;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amenities-footer a span {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.amenities-footer a:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .amenities-section {
+    padding: 90px 25px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .amenity-card {
+    padding: 25px 20px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .amenities-section {
+    padding: 75px 18px;
+  }
+
+  .amenities-heading {
+    margin-bottom: 40px;
+  }
+
+  .amenities-heading .section-title {
+    font-size: clamp(40px, 10vw, 52px);
+  }
+
+  .amenities-intro {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-card {
+    min-height: 125px;
+    padding: 23px 18px;
+    gap: 16px;
+  }
+
+  .amenity-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .amenity-copy h3 {
+    font-size: 18px;
+  }
+
+  .amenity-copy p {
+    max-width: 260px;
+  }
+
+  .amenities-footer {
+    gap: 10px;
+    margin-top: 35px;
+  }
+
+  .amenities-footer p {
+    flex-basis: 100%;
+    line-height: 1.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .amenity-card,
+  .amenity-icon,
+  .amenities-footer a span {
+    transition: none;
+  }
+}

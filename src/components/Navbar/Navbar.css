@@ -1,0 +1,569 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  color: var(--color-white);
+  background: transparent;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.navbar-container {
+  width: min(calc(100% - 80px), 1440px);
+  min-height: 94px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  transition: min-height 0.35s ease;
+}
+
+/* =========================================
+   BRAND / LOGO
+========================================= */
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 13px;
+
+  flex-shrink: 0;
+
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.navbar-logo-wrapper {
+  position: relative;
+
+  display: block;
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Logo used on the transparent navbar */
+
+.navbar-logo-light {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Logo used on the scrolled navbar */
+
+.navbar-logo-dark {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Smooth logo switching when scrolling */
+
+.navbar-scrolled .navbar-logo-light {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar-scrolled .navbar-logo-dark {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+
+  font-size: 27px;
+  font-weight: 600;
+
+  letter-spacing: -0.6px;
+
+  white-space: nowrap;
+}
+
+.brand-caption {
+  margin-top: 5px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 29px;
+}
+
+.navbar-link {
+  position: relative;
+
+  padding: 8px 0;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  opacity: 0.92;
+
+  transition: opacity 0.25s ease;
+}
+
+.navbar-link::after {
+  position: absolute;
+
+  bottom: 1px;
+  left: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: currentColor;
+
+  content: "";
+
+  transition: width 0.25s ease;
+}
+
+.navbar-link:hover {
+  opacity: 1;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   CTA BUTTONS
+========================================= */
+
+.navbar-cta,
+.navbar-mobile-cta {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 45px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  color: var(--color-white);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.navbar-cta:hover {
+  color: var(--color-primary);
+
+  background: var(--color-white);
+
+  border-color: var(--color-white);
+}
+
+.navbar-mobile-cta,
+.navbar-menu-button {
+  display: none;
+}
+
+/* =========================================
+   SCROLLED NAVBAR
+========================================= */
+
+.navbar-scrolled {
+  color: var(--color-text);
+
+  background: rgba(248, 246, 240, 0.97);
+
+  border-bottom-color: rgba(36, 53, 43, 0.08);
+
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar-scrolled .navbar-container {
+  min-height: 78px;
+}
+
+.navbar-scrolled .navbar-cta {
+  color: var(--color-white);
+
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+}
+
+.navbar-scrolled .navbar-cta:hover {
+  background: var(--color-primary-dark);
+
+  border-color: var(--color-primary-dark);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .navbar-container {
+    width: calc(100% - 48px);
+
+    gap: 22px;
+  }
+
+  .navbar-links {
+    gap: 17px;
+  }
+
+  .navbar-logo-wrapper {
+    width: 46px;
+    height: 46px;
+  }
+
+  .navbar-brand {
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .brand-caption {
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .navbar-link {
+    font-size: 11px;
+  }
+
+  .navbar-cta {
+    padding-inline: 13px;
+  }
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 850px) {
+  .navbar-container {
+    width: calc(100% - 40px);
+
+    min-height: 78px;
+  }
+
+  .navbar-scrolled .navbar-container {
+    min-height: 72px;
+  }
+
+  /* Brand */
+
+  .navbar-brand {
+    gap: 9px;
+  }
+
+  .navbar-logo-wrapper {
+    width: 43px;
+    height: 43px;
+  }
+
+  .brand-name {
+    font-size: 21px;
+  }
+
+  .brand-caption {
+    font-size: 8px;
+
+    letter-spacing: 1.6px;
+  }
+
+  /* Hide desktop CTA */
+
+  .navbar-cta {
+    display: none;
+  }
+
+  /* Hamburger button */
+
+  .navbar-menu-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+  }
+
+  /* Mobile menu panel */
+
+  .navbar-links {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    width: min(88%, 400px);
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 115px 32px 40px;
+
+    background: var(--color-cream);
+
+    color: var(--color-text);
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateX(30px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .navbar-links-open {
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateX(0);
+  }
+
+  /* Mobile links */
+
+  .navbar-link {
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(36, 53, 43, 0.1);
+
+    font-family: var(--font-heading);
+
+    font-size: 23px;
+    font-weight: 500;
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
+  /* Mobile enquiry button */
+
+  .navbar-mobile-cta {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    align-self: flex-start;
+
+    gap: 9px;
+
+    margin-top: 28px;
+
+    padding: 0 22px;
+
+    color: var(--color-white);
+
+    background: var(--color-primary);
+
+    border-color: var(--color-primary);
+  }
+
+  .navbar-mobile-cta:hover {
+    background: var(--color-primary-dark);
+
+    border-color: var(--color-primary-dark);
+  }
+
+  /* Open mobile menu header */
+
+  .navbar-menu-open {
+    color: var(--color-text);
+
+    background: var(--color-cream);
+  }
+
+  .navbar-menu-open .navbar-container {
+    position: relative;
+
+    z-index: 2;
+  }
+
+  .navbar-menu-open .navbar-menu-button {
+    position: relative;
+
+    z-index: 3;
+  }
+
+  /* Keep the dark logo visible while the mobile menu is open */
+
+  .navbar-menu-open .navbar-logo-light {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-menu-open .navbar-logo-dark {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 420px) {
+  .navbar-container {
+    width: calc(100% - 28px);
+
+    gap: 12px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .navbar-logo-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 19px;
+
+    letter-spacing: -0.4px;
+  }
+
+  .brand-caption {
+    margin-top: 4px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .navbar-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-links {
+    padding-inline: 25px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-container,
+  .navbar-logo,
+  .navbar-link,
+  .navbar-link::after,
+  .navbar-cta,
+  .navbar-mobile-cta,
+  .navbar-links {
+    transition: none;
+  }
+}

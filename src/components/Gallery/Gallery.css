@@ -1,0 +1,492 @@
+/* ========================================
+   GALLERY SECTION
+======================================== */
+
+.gallery-section {
+  width: 100%;
+  padding: 110px 6% 100px;
+  background: #eeece4;
+  color: #26352c;
+  overflow: hidden;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.gallery-heading {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.gallery-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #7b8b69;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.gallery-heading h2 {
+  margin: 0;
+  color: #26352c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.gallery-heading h2 span {
+  color: #849477;
+  font-style: italic;
+}
+
+.gallery-heading p {
+  max-width: 500px;
+  margin: 20px auto 0;
+  color: #777d74;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   CAROUSEL
+======================================== */
+
+.gallery-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1160px;
+  min-height: 510px;
+}
+
+
+/* ========================================
+   GALLERY CARDS
+======================================== */
+
+.gallery-card {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e5e5df;
+  transition:
+    width 0.45s ease,
+    height 0.45s ease,
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-card-side {
+  width: 29%;
+  height: 350px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.gallery-card-left {
+  margin-right: -35px;
+  transform: scale(0.9);
+}
+
+.gallery-card-right {
+  margin-left: -35px;
+  transform: scale(0.9);
+}
+
+.gallery-card-active {
+  width: 46%;
+  height: 465px;
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 25px 60px rgba(38, 53, 44, 0.18);
+}
+
+.gallery-card-active img {
+  animation: galleryImageReveal 0.55s ease;
+}
+
+@keyframes galleryImageReveal {
+  from {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ========================================
+   IMAGE OVERLAY
+======================================== */
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(15, 25, 19, 0.72) 0%,
+    rgba(15, 25, 19, 0.12) 45%,
+    transparent 75%
+  );
+}
+
+.gallery-card-overlay h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.gallery-card-number {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.gallery-card-side .gallery-card-overlay {
+  padding: 20px;
+}
+
+.gallery-card-side .gallery-card-overlay h3 {
+  font-size: 17px;
+}
+
+
+/* ========================================
+   NAVIGATION ARROWS
+======================================== */
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid rgba(38, 53, 44, 0.2);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #26352c;
+  font-size: 22px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.gallery-arrow-left {
+  left: 0;
+}
+
+.gallery-arrow-right {
+  right: 0;
+}
+
+.gallery-arrow:hover {
+  border-color: #26352c;
+  background: #26352c;
+  color: #ffffff;
+}
+
+.gallery-arrow:focus-visible,
+.gallery-dot:focus-visible {
+  outline: 2px solid #849477;
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   BOTTOM NAVIGATION
+======================================== */
+
+.gallery-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: #d2d6cd;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.gallery-dot.active {
+  width: 28px;
+  background: #849477;
+}
+
+.gallery-caption {
+  margin: 22px 0 0;
+  color: #858a80;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .gallery-section {
+    padding: 90px 4% 80px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 45px;
+  }
+
+  .gallery-track {
+    min-height: 400px;
+  }
+
+  .gallery-card-side {
+    height: 290px;
+  }
+
+  .gallery-card-active {
+    height: 370px;
+    width: 48%;
+  }
+
+  .gallery-card-side {
+    width: 30%;
+  }
+
+  .gallery-card-left {
+    margin-right: -20px;
+  }
+
+  .gallery-card-right {
+    margin-left: -20px;
+  }
+
+  .gallery-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+
+  .gallery-card-overlay {
+    padding: 20px;
+  }
+
+  .gallery-card-overlay h3 {
+    font-size: 20px;
+  }
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+  .gallery-section {
+    padding: 75px 20px 65px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 35px;
+  }
+
+  .gallery-eyebrow {
+    margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 35px;
+  }
+
+  .gallery-heading p {
+    margin-top: 15px;
+    font-size: 13px;
+  }
+
+  .gallery-track {
+    min-height: 340px;
+  }
+
+  .gallery-card-side {
+    width: 24%;
+    height: 240px;
+    opacity: 0.6;
+  }
+
+  .gallery-card-active {
+    width: 68%;
+    height: 320px;
+  }
+
+  .gallery-card-left {
+    margin-right: -25px;
+    transform: scale(0.85);
+  }
+
+  .gallery-card-right {
+    margin-left: -25px;
+    transform: scale(0.85);
+  }
+
+  .gallery-card-overlay {
+    padding: 18px;
+  }
+
+  .gallery-card-overlay h3 {
+    font-size: 19px;
+  }
+
+  .gallery-card-side .gallery-card-overlay {
+    padding: 10px;
+  }
+
+  .gallery-card-side .gallery-card-overlay h3 {
+    font-size: 11px;
+  }
+
+  .gallery-card-number {
+    font-size: 9px;
+  }
+
+  .gallery-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+
+  .gallery-arrow-left {
+    left: -8px;
+  }
+
+  .gallery-arrow-right {
+    right: -8px;
+  }
+
+  .gallery-bottom {
+    margin-top: 22px;
+  }
+
+  .gallery-caption {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .gallery-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 30px;
+  }
+
+  .gallery-card-active {
+    width: 70%;
+    height: 290px;
+  }
+
+  .gallery-card-side {
+    width: 22%;
+    height: 220px;
+  }
+
+  .gallery-card-left {
+    margin-right: -18px;
+  }
+
+  .gallery-card-right {
+    margin-left: -18px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card,
+  .gallery-card img,
+  .gallery-arrow,
+  .gallery-dot {
+    transition: none;
+  }
+
+  .gallery-card-active img {
+    animation: none;
+  }
+}

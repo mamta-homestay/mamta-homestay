@@ -1,0 +1,129 @@
+/* =========================
+   FLOATING WHATSAPP BUTTON
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  background: #25d366;
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+
+  z-index: 9999;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation: whatsapp-appear 0.5s ease;
+}
+
+/* =========================
+   ACTUAL WHATSAPP LOGO
+========================= */
+
+.whatsapp-icon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.whatsapp-text {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+}
+
+/* =========================
+   ENTRANCE ANIMATION
+========================= */
+
+@keyframes whatsapp-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 18px;
+    bottom: 20px;
+
+    width: 56px;
+    height: 56px;
+
+    padding: 0;
+    gap: 0;
+
+    border-radius: 50%;
+  }
+
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Hide text on mobile */
+
+  .whatsapp-text {
+    display: none;
+  }
+}
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 380px) {
+  .whatsapp-float {
+    right: 15px;
+    bottom: 15px;
+
+    width: 52px;
+    height: 52px;
+  }
+}

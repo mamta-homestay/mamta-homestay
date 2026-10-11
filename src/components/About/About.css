@@ -1,0 +1,317 @@
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px;
+  background: #f8f6f0;
+  color: #24352b;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: center;
+  gap: 100px;
+}
+
+/* ========================================
+   IMAGE COMPOSITION
+======================================== */
+
+.about-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0 35px 45px 0;
+}
+
+.about-image-main {
+  position: relative;
+  width: 100%;
+  height: 590px;
+  overflow: hidden;
+  background: #e4e5db;
+}
+
+.about-image-main img,
+.about-image-accent img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.about-visual:hover .about-image-main img {
+  transform: scale(1.035);
+}
+
+.about-image-accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 43%;
+  height: 235px;
+
+  overflow: hidden;
+  padding: 7px;
+  background: #f8f6f0;
+}
+
+.about-image-accent img {
+  object-position: center;
+}
+
+.about-note {
+  position: absolute;
+  top: 35px;
+  left: -20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 15px 20px;
+  background: #294b3b;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+}
+
+/* ========================================
+   ABOUT CONTENT
+======================================== */
+
+.about-content {
+  max-width: 510px;
+  padding: 15px 0;
+}
+
+.about-content .section-label {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  color: #55745d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+}
+
+.about-title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.about-title span {
+  color: #71836d;
+  font-style: italic;
+}
+
+.about-divider {
+  width: 58px;
+  height: 2px;
+  margin: 29px 0;
+  background: #b6a77e;
+}
+
+.about-intro {
+  margin: 0 0 20px;
+
+  color: #34483a;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  line-height: 1.65;
+}
+
+.about-description {
+  margin: 0 0 16px;
+
+  color: #68736a;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+/* ========================================
+   LINK
+======================================== */
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 20px;
+
+  color: #294b3b;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.about-link-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+
+  border: 1px solid #c9d0c5;
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-link:hover .about-link-icon {
+  color: #fff;
+  background: #294b3b;
+  border-color: #294b3b;
+  transform: translate(3px, -3px);
+}
+
+/* ========================================
+   SIGNATURE
+======================================== */
+
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 42px;
+
+  color: #8a9287;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.about-signature-line {
+  width: 35px;
+  height: 1px;
+  background: #b6a77e;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 95px 28px;
+  }
+
+  .about-container {
+    gap: 55px;
+  }
+
+  .about-image-main {
+    height: 510px;
+  }
+
+  .about-image-accent {
+    height: 190px;
+  }
+
+  .about-title {
+    font-size: 44px;
+  }
+
+  .about-intro {
+    font-size: 19px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .about-section {
+    padding: 75px 22px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-visual {
+    padding: 0 22px 30px 0;
+  }
+
+  .about-image-main {
+    height: 430px;
+  }
+
+  .about-image-accent {
+    width: 42%;
+    height: 155px;
+    padding: 5px;
+  }
+
+  .about-note {
+    top: 22px;
+    left: -10px;
+    gap: 8px;
+    padding: 12px 14px;
+    font-size: 10px;
+  }
+
+  .about-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .about-content .section-label {
+    margin-bottom: 18px;
+  }
+
+  .about-title {
+    font-size: clamp(38px, 10vw, 48px);
+  }
+
+  .about-divider {
+    margin: 24px 0;
+  }
+
+  .about-intro {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .about-description {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .about-signature {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-image-main {
+    height: 350px;
+  }
+
+  .about-title {
+    font-size: 35px;
+  }
+}

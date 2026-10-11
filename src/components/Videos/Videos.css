@@ -1,0 +1,420 @@
+/* ========================================
+   VIDEOS SECTION
+======================================== */
+
+.videos-section {
+  width: 100%;
+  padding: 100px 24px;
+  overflow: hidden;
+  background: #f8f6f0;
+}
+
+.videos-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.videos-heading {
+  max-width: 680px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.videos-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #8b7755;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.videos-heading h2 {
+  margin: 0;
+  color: #26382e;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.videos-heading h2 span {
+  color: #9b8056;
+}
+
+.videos-heading p {
+  max-width: 550px;
+  margin: 18px auto 0;
+  color: #77766f;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   CAROUSEL LAYOUT
+======================================== */
+
+.videos-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.videos-active {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ========================================
+   ACTIVE VIDEO
+======================================== */
+
+.videos-card {
+  position: relative;
+  flex: 0 1 auto;
+  overflow: hidden;
+  background: #eae6dc;
+  border-radius: 4px;
+}
+
+.videos-card-landscape {
+  width: min(100%, 850px);
+  aspect-ratio: 16 / 9;
+}
+
+.videos-card-portrait {
+  width: min(100%, 340px);
+  aspect-ratio: 9 / 16;
+}
+
+.videos-card iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================
+   PLACEHOLDER FOR VIDEOS WITHOUT IDS
+======================================== */
+
+.videos-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eae6dc;
+}
+
+.videos-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  color: #fff;
+  background: #9b8056;
+  border-radius: 50%;
+}
+
+.videos-placeholder-preview .videos-play-icon {
+  width: 38px;
+  height: 38px;
+}
+
+/* ========================================
+   SIDE VIDEO PREVIEWS
+======================================== */
+
+.videos-side {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  background: #eae6dc;
+  border: 0;
+  border-radius: 4px;
+  opacity: 0.8;
+  cursor: pointer;
+  transform: translateY(-50%) scale(0.9);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.videos-side-landscape {
+  width: 250px;
+  aspect-ratio: 16 / 9;
+}
+
+.videos-side-portrait {
+  width: 150px;
+  aspect-ratio: 9 / 16;
+}
+
+.videos-side-left {
+  left: 0;
+}
+
+.videos-side-right {
+  right: 0;
+}
+
+.videos-side img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videos-side:hover,
+.videos-side:focus-visible {
+  z-index: 3;
+  opacity: 1;
+  transform: translateY(-50%) scale(0.96);
+}
+
+.videos-side:focus-visible {
+  outline: 2px solid #9b8056;
+  outline-offset: 4px;
+}
+
+/* Play icon on previews */
+
+.videos-preview-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  background: rgba(38, 56, 46, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.videos-side:hover .videos-preview-play,
+.videos-side:focus-visible .videos-preview-play {
+  opacity: 1;
+}
+
+/* ========================================
+   NAVIGATION ARROWS
+======================================== */
+
+.videos-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: #26382e;
+  background: #fff;
+  border: 1px solid rgba(38, 56, 46, 0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.videos-arrow:hover {
+  color: #fff;
+  background: #26382e;
+  border-color: #26382e;
+}
+
+.videos-arrow-left {
+  left: 12px;
+}
+
+.videos-arrow-right {
+  right: 12px;
+}
+
+/* ========================================
+   BOTTOM NAVIGATION
+======================================== */
+
+.videos-bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.videos-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.videos-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  background: #d5d0c5;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.videos-dot.active {
+  width: 25px;
+  background: #9b8056;
+}
+
+.videos-caption {
+  margin: 0;
+  color: #77766f;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.videos-counter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #8b7755;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .videos-section {
+    padding: 80px 24px;
+  }
+
+  .videos-side-landscape {
+    width: 190px;
+  }
+
+  .videos-side-portrait {
+    width: 120px;
+  }
+
+  .videos-card-landscape {
+    width: calc(100% - 100px);
+  }
+
+  .videos-arrow-left {
+    left: 0;
+  }
+
+  .videos-arrow-right {
+    right: 0;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .videos-section {
+    padding: 65px 16px;
+  }
+
+  .videos-heading {
+    margin-bottom: 32px;
+  }
+
+  .videos-eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .videos-heading h2 {
+    font-size: 34px;
+  }
+
+  .videos-heading p {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .videos-side {
+    display: none;
+  }
+
+  .videos-card-landscape {
+    width: 100%;
+  }
+
+  .videos-card-portrait {
+    width: min(100%, 320px);
+  }
+
+  .videos-arrow {
+    top: auto;
+    bottom: -58px;
+    width: 38px;
+    height: 38px;
+    transform: none;
+  }
+
+  .videos-arrow:hover {
+    transform: none;
+  }
+
+  .videos-arrow-left {
+    left: calc(50% - 48px);
+  }
+
+  .videos-arrow-right {
+    right: calc(50% - 48px);
+  }
+
+  .videos-bottom {
+    margin-top: 76px;
+    gap: 17px;
+  }
+
+  .videos-counter {
+    position: static;
+  }
+}
